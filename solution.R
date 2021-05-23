@@ -9,7 +9,7 @@ library(caret) # normalization
 library(Directional) # another knn (regression tuning)
 
 ### LOADING DATA ###
-setwd("D:\\Uni\\SL\\SL_Project\\")
+setwd("D:\\Uni\\SL\\SL_Project_2\\")
 
 # tolerance <- seq(from = 0, to = 4, by = 0.1)
 # i <- 1
