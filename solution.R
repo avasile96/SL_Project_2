@@ -19,8 +19,14 @@ setwd("D:\\Uni\\SL\\SL_Project_2\\")
 # for (t in tolerance){
 # print(t)
 
-training_data <- as_tibble(read.csv("D:\\Uni\\SL\\SL_Project\\train_ch.csv"))
-test_data <- as_tibble(read.csv("D:\\Uni\\SL\\SL_Project\\test_ch.csv"))
+ADCN_train <- as_tibble(read.csv(".\\dataset\\ADCNtrain.csv"))
+ADCN_test <- as_tibble(read.csv(".\\dataset\\ADCNtest.csv"))
+
+ADMCI_train <- as_tibble(read.csv(".\\dataset\\ADMCItrain.csv"))
+ADMCI_test <- as_tibble(read.csv(".\\dataset\\ADMCItest.csv"))
+
+MCICN_train <- as_tibble(read.csv(".\\dataset\\MCICNtrain.csv"))
+MCICN_test <- as_tibble(read.csv(".\\dataset\\MCICNtest.csv"))
 
 
 x_train_final <- training_data %>% select(2:10)
