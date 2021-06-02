@@ -7,6 +7,7 @@ library(readr) # string to number
 library(Metrics)
 library(caret) # normalization
 library(Directional) # another knn (regression tuning)
+library(dplyr) # for finding strings in column names
 
 ### LOADING DATA ###
 setwd("D:\\Uni\\SL\\SL_Project_2\\")
@@ -21,10 +22,10 @@ y_ADCN_train <- as.integer(ADCN_train$Labels == 'CN')
 ### EXPLORING DATA ###
 
 # correlation
-train_cor = cor(x_train_final)
-ggcorr(x_train_final)
+train_cor = cor(x_ADCN_train)
+ggcorr(x_ADCN_train[2,10])
 
-remove(train_cor, train_cov) #decluttering
+remove(train_cor) #decluttering
 
 ### FEATURE ENGINEERING ###
 

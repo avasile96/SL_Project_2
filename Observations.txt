@@ -1,1 +1,19 @@
 - from 387 onwards: genes
+
+Genes relevant to Alzheimers:
+select(x_ADCN_train,matches("CYP")):  CYP4A11....CYP4A22
+(maybe all columns with"..." have smth important
+select(x_ADCN_train,matches("HLA"))
+select(x_ADCN_train,matches("SLC6"))
+select(x_ADCN_train,matches("SRP"))
+
+Parts of Brain:
+select(x_ADCN_train,matches("hippoca"))
+select(x_ADCN_train,matches("frontal"))
+select(x_ADCN_train,matches("tempo"))
+select(x_ADCN_train,matches("parie"))
+select(x_ADCN_train,matches("amyg"))
+select(x_ADCN_train,matches("call"))
+
+
+I've used Genecards.org
