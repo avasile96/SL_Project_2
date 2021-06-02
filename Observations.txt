@@ -15,5 +15,13 @@ select(x_ADCN_train,matches("parie"))
 select(x_ADCN_train,matches("amyg"))
 select(x_ADCN_train,matches("call"))
 
+Solve class imbalance:
+SMOTE seems to be the way
+
+https://stats.stackexchange.com/questions/235808/binary-classification-with-strongly-unbalanced-classes
+https://www.analyticsvidhya.com/blog/2016/03/practical-guide-deal-imbalanced-classification-problems/
+
+https://dpmartin42.github.io/posts/r/imbalanced-classes-part-1
+
 
 I've used Genecards.org

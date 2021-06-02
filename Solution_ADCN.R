@@ -8,6 +8,7 @@ library(Metrics)
 library(caret) # normalization
 library(Directional) # another knn (regression tuning)
 library(dplyr) # for finding strings in column names
+library(imager) # dealing with images
 
 ### LOADING DATA ###
 setwd("D:\\Uni\\SL\\SL_Project_2\\")
@@ -17,6 +18,7 @@ ADCN_train <- as_tibble(read.csv(".\\dataset\\ADCNtrain.csv"))
 ADCN_test <- as_tibble(read.csv(".\\dataset\\ADCNtest.csv"))
 
 x_ADCN_train <- ADCN_train %>% select(2:567)
+x_ADCN_train$Labels <- as.integer(ADCN_train$Labels == 'CN')
 y_ADCN_train <- as.integer(ADCN_train$Labels == 'CN')
 
 ### EXPLORING DATA ###
