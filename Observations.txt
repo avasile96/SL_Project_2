@@ -1,19 +1,19 @@
 - from 387 onwards: genes
 
 Genes relevant to Alzheimers:
-select(x_ADCN_train,matches("CYP")):  CYP4A11....CYP4A22
+select(x_train,matches("CYP")):  CYP4A11....CYP4A22
 (maybe all columns with"..." have smth important
-select(x_ADCN_train,matches("HLA"))
-select(x_ADCN_train,matches("SLC6"))
-select(x_ADCN_train,matches("SRP"))
+select(x_train,matches("HLA"))
+select(x_train,matches("SLC6"))
+select(x_train, matches("SRP"))
 
 Parts of Brain:
-select(x_ADCN_train,matches("hippoca"))
-select(x_ADCN_train,matches("frontal"))
-select(x_ADCN_train,matches("tempo"))
-select(x_ADCN_train,matches("parie"))
-select(x_ADCN_train,matches("amyg"))
-select(x_ADCN_train,matches("call"))
+select(x_train, matches("hippoca"))
+select(x_train,matches("frontal"))
+select(x_train,matches("tempo"))
+select(x_train,matches("parie"))
+select(x_train,matches("amyg"))
+select(x_train,matches("call"))
 
 Solve class imbalance:
 SMOTE seems to be the way
@@ -24,4 +24,34 @@ https://www.analyticsvidhya.com/blog/2016/03/practical-guide-deal-imbalanced-cla
 https://dpmartin42.github.io/posts/r/imbalanced-classes-part-1
 
 
+
+R coding:
+logistic <- glm(target ~ variable, data = x_train_data, family = 'binomial' (to perform log reg))
+
+R methods:
+Interractions: https://www.youtube.com/watch?v=BPezEFME7QI
+Do some wald test (summary(logistic))
+
+
+
 I've used Genecards.org
+
+
+ADCN
+ADABoost
+ nIter  method         Accuracy   Kappa    
+   50    Adaboost.M1    0.9366667  0.8521245
+   50    Real adaboost  0.9166667  0.7995448
+  100    Adaboost.M1    0.9366667  0.8523087
+  100    Real adaboost  0.9300000  0.8328088
+  150    Adaboost.M1    0.9333333  0.8447319
+  150    Real adaboost  0.9300000  0.8328088
+
+nodeHarvest
+maxinter  mode    Accuracy   Kappa    
+  1         mean    0.7966667  0.4783440
+  1         outbag  0.8000000  0.4881613
+  2         mean    0.8666667  0.6778859
+  2         outbag  0.8666667  0.6864070
+  3         mean    0.9033333  0.7739595
+  3         outbag  0.9200000  0.8125369
